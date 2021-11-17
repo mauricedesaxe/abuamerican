@@ -106,8 +106,11 @@ const navigation = {
     },
   ],
   pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
+    { name: "Products", href: "#products" },
+    {
+      name: "YouTube",
+      href: "https://www.youtube.com/user/Noneyabusinesschief",
+    },
   ],
 };
 const categories = [
@@ -142,66 +145,35 @@ const categories = [
       "https://tailwindui.com/img/ecommerce-images/home-page-01-category-03.jpg",
   },
 ];
-const collections = [
+const products = [
   {
-    name: "Handcrafted Collection",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-01-collection-01.jpg",
+    name: "Guide to Vetting Women",
+    href: "https://gumroad.com/a/320271475/hcDvJ",
+    imageSrc: "/vetting-guide.webp",
     imageAlt:
       "Brown leather key ring with brass metal loops and rivets on wood table.",
     description:
       "Keep your phone, keys, and wallet together, so you can lose everything at once.",
   },
   {
-    name: "Organized Desk Collection",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-01-collection-02.jpg",
+    name: "The Polygynous Household",
+    href: "https://gumroad.com/a/320271475/mQTkh",
+    imageSrc: "/poly-household.jpg",
     imageAlt:
       "Natural leather mouse pad on white desk next to porcelain mug and keyboard.",
     description:
       "The rest of the house will still be a mess, but your desk will look great.",
   },
   {
-    name: "Focus Collection",
-    href: "#",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/home-page-01-collection-03.jpg",
+    name: "The Mad Monkey",
+    href: "https://gumroad.com/a/320271475/Mpkps",
+    imageSrc: "/mad-monkey.webp",
     imageAlt:
       "Person placing task list card into walnut card holder next to felt carrying case on leather desk pad.",
     description:
       "Be more productive than enterprise project managers with a single piece of paper.",
   },
 ];
-const footerNavigation = {
-  shop: [
-    { name: "Bags", href: "#" },
-    { name: "Tees", href: "#" },
-    { name: "Objects", href: "#" },
-    { name: "Home Goods", href: "#" },
-    { name: "Accessories", href: "#" },
-  ],
-  company: [
-    { name: "Who we are", href: "#" },
-    { name: "Sustainability", href: "#" },
-    { name: "Press", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Terms & Conditions", href: "#" },
-    { name: "Privacy", href: "#" },
-  ],
-  account: [
-    { name: "Manage Account", href: "#" },
-    { name: "Returns & Exchanges", href: "#" },
-    { name: "Redeem a Gift Card", href: "#" },
-  ],
-  connect: [
-    { name: "Contact Us", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Pinterest", href: "#" },
-  ],
-};
 const socialLinks = [
   {
     name: "Twitter",
@@ -305,14 +277,35 @@ export default function Example() {
               <div className="border-t border-gray-200 py-6 px-4 space-y-6">
                 {navigation.pages.map((page) => (
                   <div key={page.name} className="flow-root">
-                    <a
-                      href={page.href}
-                      className="-m-2 p-2 block font-medium text-gray-900"
-                    >
-                      {page.name}
-                    </a>
+                    <Link href={page.href}>
+                      <a className="-m-2 p-2 block font-medium text-gray-900">
+                        {page.name}
+                      </a>
+                    </Link>
                   </div>
                 ))}
+              </div>
+
+              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                {products.map((page) => (
+                  <div key={page.name} className="flow-root">
+                    <Link href={page.href}>
+                      <a className="-m-2 p-2 block font-medium text-gray-900">
+                        {page.name}
+                      </a>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
+                <div className="flow-root">
+                  <Link href="https://gumroad.com/a/320271475/XkBvB">
+                    <a className="-m-2 p-2 block font-medium text-gray-900">
+                      Men's Community
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </Transition.Child>
@@ -368,14 +361,20 @@ export default function Example() {
                       <Popover.Group className="px-4 bottom-0 inset-x-0">
                         <div className="h-full flex justify-center space-x-8">
                           {navigation.pages.map((page) => (
-                            <a
-                              key={page.name}
-                              href={page.href}
-                              className="flex items-center text-sm font-medium text-white"
-                            >
-                              {page.name}
-                            </a>
+                            <Link href={page.href}>
+                              <a
+                                key={page.name}
+                                className="flex items-center text-sm font-medium text-white"
+                              >
+                                {page.name}
+                              </a>
+                            </Link>
                           ))}
+                          <Link href="https://gumroad.com/a/320271475/XkBvB">
+                            <a className="flex items-center text-sm font-medium text-white">
+                              Men's Community
+                            </a>
+                          </Link>
                         </div>
                       </Popover.Group>
                     </div>
@@ -432,8 +431,9 @@ export default function Example() {
       <main>
         {/* Collection section */}
         <section
+          id="products"
           aria-labelledby="collection-heading"
-          className="max-w-xl mx-auto py-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8"
+          className="max-w-xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8"
         >
           <h2
             id="collection-heading"
@@ -447,30 +447,68 @@ export default function Example() {
           </p>
 
           <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
-            {collections.map((collection) => (
-              <a
-                key={collection.name}
-                href={collection.href}
-                className="group block"
-              >
-                <div
-                  aria-hidden="true"
-                  className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
-                >
-                  <img
-                    src={collection.imageSrc}
-                    alt={collection.imageAlt}
-                    className="w-full h-full object-center object-cover"
-                  />
-                </div>
-                <h3 className="mt-4 text-base font-semibold text-gray-900">
-                  {collection.name}
-                </h3>
-                <p className="mt-2 text-sm text-gray-500">
-                  {collection.description}
-                </p>
-              </a>
+            {products.map((product) => (
+              <Link href={product.href}>
+                <a key={product.name} className="group block">
+                  <div
+                    aria-hidden="true"
+                    className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
+                  >
+                    <Image
+                      src={product.imageSrc}
+                      alt={product.imageAlt}
+                      width={600}
+                      height={400}
+                      className="w-full h-full object-center object-cover"
+                    />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold text-gray-900">
+                    {product.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-500">
+                    {product.description}
+                  </p>
+                </a>
+              </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Featured section */}
+        <section
+          aria-labelledby="comfort-heading"
+          className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
+        >
+          <div className="relative rounded-lg overflow-hidden">
+            <div className="absolute inset-0">
+              <Image
+                src="/mens-community.jpg"
+                alt="Men's community"
+                className="w-full h-full object-center object-cover"
+                layout="fill"
+              />
+            </div>
+            <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+              <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
+                <h2
+                  id="comfort-heading"
+                  className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+                >
+                  Men's Community
+                </h2>
+                <p className="mt-3 text-xl text-white">
+                  Do you feel like your interests are at odds with your
+                  contemporary friends? I’ve built a community for muslim men to
+                  learn from each other and become the best version of
+                  themselves.
+                </p>
+                <Link href="https://gumroad.com/a/320271475/XkBvB">
+                  <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
+                    Join Now
+                  </a>
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -479,14 +517,15 @@ export default function Example() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center space-x-6 md:order-2">
             {socialLinks.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-400 hover:text-gray-500"
-              >
-                <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
-              </a>
+              <Link href={item.href}>
+                <a
+                  key={item.name}
+                  className="text-gray-400 hover:text-gray-500"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              </Link>
             ))}
           </div>
           <div className="mt-8 md:mt-0 md:order-1">
