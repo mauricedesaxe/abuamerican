@@ -511,6 +511,33 @@ export default function Example() {
             </div>
           </div>
         </section>
+
+        {/* Consultation section */}
+        <section
+          aria-labelledby="comfort-heading"
+          className="max-w-7xl mx-auto py-6 px-4 sm:py-8 sm:px-6 lg:px-8"
+        >
+          <div className="relative rounded-lg overflow-hidden">
+            <div className="relative py-6 px-6 sm:py-8 sm:px-12 lg:px-16">
+              <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
+                <h2
+                  id="comfort-heading"
+                  className="text-3xl font-extrabold tracking-tight text-black sm:text-4xl"
+                >
+                  Feel like you need personalised advice?
+                </h2>
+                <p className="mt-3 text-xl text-black">
+                  Feel free to schedule a paid private one-on-one with me.
+                </p>
+                <Link href="https://www.duameet.com/Abuamerican/1-on-1">
+                  <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
+                    Get One-on-One
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="bg-white">
