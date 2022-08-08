@@ -529,7 +529,7 @@ export default function Example() {
                 <p className="mt-3 text-xl text-black">
                   Feel free to schedule a paid private one-on-one with me.
                 </p>
-                <Link href="https://www.duameet.com/Abuamerican/1-on-1">
+                <Link href="https://calendly.com/abuamerican">
                   <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
                     Get One-on-One
                   </a>
