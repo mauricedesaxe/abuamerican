@@ -411,21 +411,14 @@ export default function Example() {
           </nav>
         </header>
 
-        <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
-          <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
-            Abuamerican
-          </h1>
-          <p className="mt-4 text-xl text-white">
-            I’ve coached hundreds of men and helped them to improve their
-            relationships. If you are looking to learn, I provide a number of
-            courses &amp; products on the subject.
-          </p>
-          <Link href="#products">
-            <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-              See Products
-            </a>
-          </Link>
-        </div>
+        <Hero
+          title="Abuamerican"
+          description="I’ve coached hundreds of men and helped them to improve their
+        relationships. If you are looking to learn, I provide a number of
+        courses &amp; products on the subject."
+          cta="See Products"
+          ctaLink="#products"
+        />
       </div>
 
       <main>
@@ -566,3 +559,29 @@ export default function Example() {
     </div>
   );
 }
+
+const Hero = ({
+  title,
+  description,
+  cta,
+  ctaLink,
+}: {
+  title: string;
+  description: string;
+  cta: string;
+  ctaLink: string;
+}) => {
+  return (
+    <div className="relative max-w-3xl mx-auto py-32 px-6 flex flex-col items-center text-center sm:py-64 lg:px-0">
+      <h1 className="text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
+        {title}
+      </h1>
+      <p className="mt-4 text-xl text-white">{description}</p>
+      <Link href={ctaLink}>
+        <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
+          {cta}
+        </a>
+      </Link>
+    </div>
+  );
+};
