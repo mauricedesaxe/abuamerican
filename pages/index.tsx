@@ -430,42 +430,14 @@ export default function Example() {
         />
 
         {/* Featured section */}
-        <section
-          aria-labelledby="comfort-heading"
-          className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
-        >
-          <div className="relative rounded-lg overflow-hidden">
-            <div className="absolute inset-0">
-              <Image
-                src="/mens-community.jpg"
-                alt="Men's community"
-                className="w-full h-full object-center object-cover"
-                layout="fill"
-              />
-            </div>
-            <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
-              <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
-                <h2
-                  id="comfort-heading"
-                  className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
-                >
-                  Men's Community
-                </h2>
-                <p className="mt-3 text-xl text-white">
-                  Do you feel like your interests are at odds with your
-                  contemporary friends? I’ve built a community for muslim men to
-                  learn from each other and become the best version of
-                  themselves.
-                </p>
-                <Link href="https://gumroad.com/a/320271475/XkBvB">
-                  <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-                    Join Now
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Community
+          title="Men's Community"
+          description="Do you feel like your interests are at odds with your contemporary
+              friends? I’ve built a community for muslim men to learn from each
+              other and become the best version of themselves."
+          cta="Join Now"
+          ctaLink="https://gumroad.com/a/320271475/XkBvB"
+        />
 
         {/* Consultation section */}
         <section
@@ -594,6 +566,52 @@ const Products = ({
             </a>
           </Link>
         ))}
+      </div>
+    </section>
+  );
+};
+
+const Community = ({
+  title,
+  description,
+  cta,
+  ctaLink,
+}: {
+  title: string;
+  description: string;
+  cta: string;
+  ctaLink: string;
+}) => {
+  return (
+    <section
+      aria-labelledby="comfort-heading"
+      className="max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8"
+    >
+      <div className="relative rounded-lg overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/mens-community.jpg"
+            alt="Men's community"
+            className="w-full h-full object-center object-cover"
+            layout="fill"
+          />
+        </div>
+        <div className="relative bg-gray-900 bg-opacity-75 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
+          <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
+            <h2
+              id="comfort-heading"
+              className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+            >
+              {title}
+            </h2>
+            <p className="mt-3 text-xl text-white">{description}</p>
+            <Link href={ctaLink}>
+              <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
+                {cta}
+              </a>
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );
