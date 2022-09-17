@@ -422,50 +422,12 @@ export default function Example() {
       </div>
 
       <main>
-        {/* Collection section */}
-        <section
-          id="products"
-          aria-labelledby="collection-heading"
-          className="max-w-xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8"
-        >
-          <h2
-            id="collection-heading"
-            className="text-2xl font-extrabold tracking-tight text-gray-900"
-          >
-            Learn how to improve your relationships
-          </h2>
-          <p className="mt-4 text-base text-gray-500">
-            With the right techniques, it’s possible to have multiple loving
-            &amp; submissive women.
-          </p>
-
-          <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
-            {products.map((product) => (
-              <Link href={product.href}>
-                <a key={product.name} className="group block">
-                  <div
-                    aria-hidden="true"
-                    className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
-                  >
-                    <Image
-                      src={product.imageSrc}
-                      alt={product.imageAlt}
-                      width={600}
-                      height={400}
-                      className="w-full h-full object-center object-cover"
-                    />
-                  </div>
-                  <h3 className="mt-4 text-base font-semibold text-gray-900">
-                    {product.name}
-                  </h3>
-                  <p className="mt-2 text-sm text-gray-500">
-                    {product.description}
-                  </p>
-                </a>
-              </Link>
-            ))}
-          </div>
-        </section>
+        {/* Products section */}
+        <Products
+          title="Learn how to improve your relationships"
+          description="With the right techniques, it’s possible to have multiple loving &amp;
+        submissive women."
+        />
 
         {/* Featured section */}
         <section
@@ -583,5 +545,56 @@ const Hero = ({
         </a>
       </Link>
     </div>
+  );
+};
+
+const Products = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
+  return (
+    <section
+      id="products"
+      aria-labelledby="collection-heading"
+      className="max-w-xl mx-auto pt-24 px-4 sm:pt-32 sm:px-6 lg:max-w-7xl lg:px-8"
+    >
+      <h2
+        id="collection-heading"
+        className="text-2xl font-extrabold tracking-tight text-gray-900"
+      >
+        {title}
+      </h2>
+      <p className="mt-4 text-base text-gray-500">{description}</p>
+
+      <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
+        {products.map((product) => (
+          <Link href={product.href}>
+            <a key={product.name} className="group block">
+              <div
+                aria-hidden="true"
+                className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
+              >
+                <Image
+                  src={product.imageSrc}
+                  alt={product.imageAlt}
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-center object-cover"
+                />
+              </div>
+              <h3 className="mt-4 text-base font-semibold text-gray-900">
+                {product.name}
+              </h3>
+              <p className="mt-2 text-sm text-gray-500">
+                {product.description}
+              </p>
+            </a>
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 };
