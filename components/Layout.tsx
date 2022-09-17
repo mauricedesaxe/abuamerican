@@ -4,6 +4,7 @@ import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { navigation, products, socialLinks } from "../utils/contants";
+import { LinkBtn } from "./Buttons";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -217,11 +218,7 @@ const Hero = ({
         {title}
       </h1>
       <p className="mt-4 text-xl text-white">{description}</p>
-      <Link href={ctaLink}>
-        <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-          {cta}
-        </a>
-      </Link>
+      <LinkBtn link={ctaLink} cta={cta} />
     </div>
   );
 };

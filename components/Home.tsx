@@ -3,6 +3,7 @@ import { products } from "../utils/contants";
 import Image from "next/image";
 import { useState } from "react";
 import { NewsletterForm } from "./Newsletter";
+import { LinkBtn } from "./Buttons";
 
 export const Products = ({
   title,
@@ -89,11 +90,7 @@ export const Community = ({
               {title}
             </h2>
             <p className="mt-3 text-xl text-white">{description}</p>
-            <Link href={ctaLink}>
-              <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-                {cta}
-              </a>
-            </Link>
+            <LinkBtn link={ctaLink} cta={cta} />
           </div>
         </div>
       </div>
@@ -127,11 +124,7 @@ export const Consultation = ({
               {title}
             </h2>
             <p className="mt-3 text-xl text-black">{description}</p>
-            <Link href={ctaLink}>
-              <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-                {cta}
-              </a>
-            </Link>
+            <LinkBtn link={ctaLink} cta={cta} />
           </div>
         </div>
       </div>

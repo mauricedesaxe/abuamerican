@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { FormBtn } from "./Buttons";
 
 export const NewsletterForm = () => {
   const [email, setEmail] = useState("");
@@ -36,12 +37,7 @@ export const NewsletterForm = () => {
             </div>
           </div>
           <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-            <button
-              type="submit"
-              className="inline-block bg-blue-500 border border-transparent rounded-md py-2 px-4 text-base font-medium text-gray-50 transition-colors hover:opacity-90"
-            >
-              Sign up
-            </button>
+            <FormBtn cta="Sign up" />
           </div>
         </div>
       </form>
