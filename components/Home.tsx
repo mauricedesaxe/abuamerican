@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { products } from "../utils/contants";
 import Image from "next/image";
+import { useState } from "react";
+import { NewsletterForm } from "./Newsletter";
 
 export const Products = ({
   title,
@@ -130,6 +132,23 @@ export const Consultation = ({
                 {cta}
               </a>
             </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const NewsletterSection = () => {
+  return (
+    <section
+      aria-labelledby="comfort-heading"
+      className="max-w-2xl mx-auto py-6 px-4 sm:py-8 sm:px-6 lg:px-8"
+    >
+      <div className="relative rounded-lg overflow-hidden">
+        <div className="relative py-6 px-6 sm:py-8 sm:px-12 lg:px-16">
+          <div className="relative max-w-3xl mx-auto flex flex-col">
+            <NewsletterForm />
           </div>
         </div>
       </div>
