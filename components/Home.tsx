@@ -28,8 +28,8 @@ export const Products = ({
 
       <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
         {products.map((product) => (
-          <Link href={product.href}>
-            <a key={product.name} className="group block">
+          <Link key={product.name} href={product.href}>
+            <a className="group block">
               <div
                 aria-hidden="true"
                 className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
