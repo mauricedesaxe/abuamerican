@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { products } from "../utils/contants";
 import Image from "next/image";
+import { useState } from "react";
+import { NewsletterForm } from "./Newsletter";
+import { LinkBtn } from "./Buttons";
 
 export const Products = ({
   title,
@@ -25,8 +28,8 @@ export const Products = ({
 
       <div className="mt-10 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
         {products.map((product) => (
-          <Link href={product.href}>
-            <a key={product.name} className="group block">
+          <Link key={product.name} href={product.href}>
+            <a className="group block">
               <div
                 aria-hidden="true"
                 className="aspect-w-3 aspect-h-2 rounded-lg overflow-hidden group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
@@ -87,11 +90,7 @@ export const Community = ({
               {title}
             </h2>
             <p className="mt-3 text-xl text-white">{description}</p>
-            <Link href={ctaLink}>
-              <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-                {cta}
-              </a>
-            </Link>
+            <LinkBtn link={ctaLink} cta={cta} />
           </div>
         </div>
       </div>
@@ -125,11 +124,24 @@ export const Consultation = ({
               {title}
             </h2>
             <p className="mt-3 text-xl text-black">{description}</p>
-            <Link href={ctaLink}>
-              <a className="mt-8 inline-block bg-blue-500 border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-50 transition-colors hover:opacity-90">
-                {cta}
-              </a>
-            </Link>
+            <LinkBtn link={ctaLink} cta={cta} />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const NewsletterSection = () => {
+  return (
+    <section
+      aria-labelledby="comfort-heading"
+      className="max-w-2xl mx-auto py-6 px-4 sm:py-8 sm:px-6 lg:px-8"
+    >
+      <div className="relative rounded-lg overflow-hidden">
+        <div className="relative py-6 px-6 sm:py-8 sm:px-12 lg:px-16">
+          <div className="relative max-w-3xl mx-auto flex flex-col">
+            <NewsletterForm />
           </div>
         </div>
       </div>

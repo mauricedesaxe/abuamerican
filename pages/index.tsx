@@ -1,5 +1,10 @@
 import Head from "next/head";
-import { Community, Consultation, Products } from "../components/Home";
+import {
+  Community,
+  Consultation,
+  NewsletterSection,
+  Products,
+} from "../components/Home";
 import { Footer, Header } from "../components/Layout";
 
 export default function Home() {
@@ -62,6 +67,8 @@ export default function Home() {
           cta="Get One-on-One"
           ctaLink="https://calendly.com/abuamerican"
         />
+
+        <NewsletterSection />
       </main>
 
       <Footer />
