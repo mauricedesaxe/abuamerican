@@ -64,8 +64,10 @@ export default function Home() {
         <Consultation
           title="Feel like you need personalised advice?"
           description="Feel free to schedule a paid private one-on-one with me."
-          cta="Get One-on-One"
-          ctaLink="https://calendly.com/abuamerican"
+          cta1="Book 30 min"
+          ctaLink1="https://gumroad.com/a/320271475/gwsgp"
+          cta2="Book 60 min"
+          ctaLink2="https://gumroad.com/a/320271475/jhzzwa"
         />
 
         <NewsletterSection />

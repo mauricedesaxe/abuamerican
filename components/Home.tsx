@@ -3,7 +3,7 @@ import { products } from "../utils/contants";
 import Image from "next/image";
 import { useState } from "react";
 import { NewsletterForm } from "./Newsletter";
-import { LinkBtn } from "./Buttons";
+import { DoubleLinkBtn, LinkBtn } from "./Buttons";
 
 export const Products = ({
   title,
@@ -101,13 +101,17 @@ export const Community = ({
 export const Consultation = ({
   title,
   description,
-  cta,
-  ctaLink,
+  cta1,
+  ctaLink1,
+  cta2,
+  ctaLink2,
 }: {
   title: string;
   description: string;
-  cta: string;
-  ctaLink: string;
+  cta1: string;
+  ctaLink1: string;
+  cta2: string;
+  ctaLink2: string;
 }) => {
   return (
     <section
@@ -124,7 +128,12 @@ export const Consultation = ({
               {title}
             </h2>
             <p className="mt-3 text-xl text-black">{description}</p>
-            <LinkBtn link={ctaLink} cta={cta} />
+            <DoubleLinkBtn
+              link1={ctaLink1}
+              cta1={cta1}
+              link2={ctaLink2}
+              cta2={cta2}
+            />
           </div>
         </div>
       </div>
