@@ -74,16 +74,6 @@ export const Header = () => {
                   </div>
                 ))}
               </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                <div className="flow-root">
-                  <Link href="https://gumroad.com/a/320271475/XkBvB">
-                    <a className="-m-2 p-2 block font-medium text-gray-900">
-                      Men's Community
-                    </a>
-                  </Link>
-                </div>
-              </div>
             </div>
           </Transition.Child>
         </Dialog>
@@ -144,11 +134,6 @@ export const Header = () => {
                               </a>
                             </Link>
                           ))}
-                          <Link href="https://gumroad.com/a/320271475/XkBvB">
-                            <a className="flex items-center text-sm font-medium text-white">
-                              Men's Community
-                            </a>
-                          </Link>
                         </div>
                       </Popover.Group>
                     </div>

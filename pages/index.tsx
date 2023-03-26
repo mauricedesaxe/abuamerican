@@ -6,6 +6,7 @@ import {
   Products,
 } from "../components/Home";
 import { Footer, Header } from "../components/Layout";
+import { links } from "../utils/contants";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
               friends? I’ve built a community for muslim men to learn from each
               other and become the best version of themselves."
           cta="Join Now"
-          ctaLink="https://gumroad.com/a/320271475/XkBvB"
+          ctaLink={links.menCommunity}
         />
 
         {/* Consultation section */}
@@ -65,9 +66,9 @@ export default function Home() {
           title="Feel like you need personalised advice?"
           description="Feel free to schedule a paid private one-on-one with me."
           cta1="Book 30 min"
-          ctaLink1="https://gumroad.com/a/320271475/gwsgp"
+          ctaLink1={links.thirtyMinuteConsultation}
           cta2="Book 60 min"
-          ctaLink2="https://gumroad.com/a/320271475/jhzzwa"
+          ctaLink2={links.oneHourConsultation}
         />
 
         <NewsletterSection />
