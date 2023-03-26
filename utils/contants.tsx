@@ -9,6 +9,8 @@ export const links = {
   polyHousehold: "https://gumroad.com/a/320271475/mQTkh",
   madMonkey: "https://gumroad.com/a/320271475/Mpkps",
   menCommunity: "https://gumroad.com/a/320271475/XkBvB",
+  thirtyMinuteConsultation: "https://gumroad.com/a/320271475/gwsgp",
+  oneHourConsultation: "https://gumroad.com/a/320271475/jhzzwa",
 };
 
 export const navigation = {
