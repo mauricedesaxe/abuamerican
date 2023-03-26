@@ -6,6 +6,7 @@ import {
   Products,
 } from "../components/Home";
 import { Footer, Header } from "../components/Layout";
+import { links } from "../utils/contants";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
               friends? I’ve built a community for muslim men to learn from each
               other and become the best version of themselves."
           cta="Join Now"
-          ctaLink="https://gumroad.com/a/320271475/XkBvB"
+          ctaLink={links.menCommunity}
         />
 
         {/* Consultation section */}

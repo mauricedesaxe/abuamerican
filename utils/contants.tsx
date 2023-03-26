@@ -8,6 +8,7 @@ export const links = {
   vettingGuide: "https://gumroad.com/a/320271475/hcDvJ",
   polyHousehold: "https://gumroad.com/a/320271475/mQTkh",
   madMonkey: "https://gumroad.com/a/320271475/Mpkps",
+  menCommunity: "https://gumroad.com/a/320271475/XkBvB",
 };
 
 export const navigation = {
@@ -16,6 +17,10 @@ export const navigation = {
     {
       name: "YouTube",
       href: links.youtube,
+    },
+    {
+      name: "Men's Community",
+      href: links.menCommunity,
     },
   ],
 };
