@@ -7,8 +7,11 @@ import {
 } from "../components/Home";
 import { Footer, Header } from "../components/Layout";
 import { links } from "../utils/contants";
+import { useState } from "react";
 
 export default function Home() {
+  const [banner, setBanner] = useState(true);
+
   return (
     <div className="bg-white">
       <Head>
@@ -75,6 +78,52 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Bali Real Estate Brochure */}
+      {banner && (
+        <div className="fixed bottom-0 right-0 p-4 min-w-16 sm:w-[520px]">
+          <div className="shadow rounded-md">
+            <div className="bg-gray-100 p-4 rounded-t-md shadow-sm flex justify-between">
+              <p className="text-base font-semibold">
+                Your guide to finding beautiful properties in Indonesia.
+              </p>
+              <button
+                onClick={() => setBanner(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div className="p-4 bg-gray-50 rounded-b-md">
+              <p>
+                Whether you're looking for a peaceful mountain retreat or a
+                stunning beachfront plot, we provide the support and expertise
+                you need to make your dream a reality.
+              </p>
+              <a
+                className="bg-blue-500 text-white px-4 py-2 rounded mt-2 block text-center"
+                href="/bali_and_beyond.pdf"
+                download
+              >
+                Get the "Bali and Beyond" Brochure
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
