@@ -80,7 +80,7 @@ export default function Home() {
       <Footer />
 
       {/* Bali Real Estate Brochure */}
-      {/* {banner && (
+      {banner && (
         <div className="fixed bottom-0 right-0 p-4 min-w-16 sm:w-[520px]">
           <div className="shadow rounded-md">
             <div className="bg-gray-100 p-4 rounded-t-md shadow-sm flex justify-between">
@@ -123,7 +123,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
