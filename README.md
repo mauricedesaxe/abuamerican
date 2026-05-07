@@ -1,29 +1,68 @@
-# Next.js + Tailwind CSS Example
+# abuamerican
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v2.2)](https://blog.tailwindcss.com/tailwindcss-2-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Marketing site for Abu American, deployed on Vercel.
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+## Stack
 
-## Preview
+- [Next.js](https://nextjs.org) 12.1.6 (pages router)
+- [React](https://react.dev) 17
+- [TypeScript](https://www.typescriptlang.org) 4.8
+- [Tailwind CSS](https://tailwindcss.com) 2.2 (JIT mode)
+- [ConvertKit](https://convertkit.com) for newsletter signups (via `pages/api/saveEmail.ts`)
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+The stack is pinned and not being upgraded. See `CLAUDE.md` for the full rationale.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Prerequisites
 
-## Deploy your own
+- **Node 24.x** — `.nvmrc` is provided, so `nvm use` will switch automatically.
+- **Yarn 1.22.22** — `packageManager` is pinned in `package.json`. Do **not** install with Yarn 2+.
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+If you don't have Node installed:
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+# install nvm first: https://github.com/nvm-sh/nvm
+nvm install 24
+nvm use
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Local development
+
+```bash
+yarn install
+cp .env.example .env.local
+# fill .env.local with real values from the project owner
+yarn dev
+```
+
+The dev server runs on http://localhost:3000.
+
+## Environment variables
+
+The newsletter signup endpoint requires ConvertKit credentials. See `.env.example` for the full list. Get real values from the project owner — never commit `.env.local`.
+
+| Variable               | Used for                                   |
+| ---------------------- | ------------------------------------------ |
+| `CONVERTKIT_FORM_ID`   | Target ConvertKit form for email signups   |
+| `CONVERTKIT_API_KEY`   | ConvertKit API key for the signup endpoint |
+
+## Scripts
+
+| Command       | What it does                           |
+| ------------- | -------------------------------------- |
+| `yarn dev`    | Start the Next.js dev server           |
+| `yarn build`  | Production build (also runs on Vercel) |
+| `yarn start`  | Run a built app locally                |
+
+## Contributing
+
+`main` is protected — direct pushes are blocked. All changes go through a PR that must pass Vercel preview deploy and receive code-owner approval before merging.
+
+Read `CLAUDE.md` before opening your first PR. It covers branch naming, atomic-commit style, and what not to do.
+
+## Deployment
+
+Pushes to PRs trigger Vercel preview deploys. Merging to `main` triggers a production deploy. Both are managed by the Vercel GitHub integration — no extra action needed.
+
+## Rollback
+
+Last known-stable point before active development resumed is tagged `v-stable-2026-05-07`. See `CLAUDE.md` for rollback steps.
