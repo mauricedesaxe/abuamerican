@@ -15,11 +15,9 @@ export default function Home() {
   return (
     <div className="bg-white">
       <Head>
-        <title>Abuamerican</title>
+        <title>Men's Life Coach & Confidence Mentor | Abuamerican</title>
         <meta name="title" content="Abuamerican" />
-        <meta
-          name="description"
-          content="I’ve coached hundreds of men and helped them to improve their relationships. If you are looking to learn , I provide a number of courses &amp; products on the subject."
+        <meta name="description" content="1-on-1 coaching for men ready to transform their confidence, relationships and mindset. Work directly with Abuamerican. Book your consultation today."
         />
 
         <meta property="og:type" content="website" />
@@ -42,6 +40,18 @@ export default function Home() {
           property="twitter:image"
           content="https://abuamerican.com/wives.jpg"
         />
+      
+        <link rel="canonical" href="https://abuamerican.com/" />
+        <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abuamerican",
+  "url": "https://abuamerican.com",
+  "jobTitle": "Men's Life Coach",
+  "description": "1-on-1 coaching for men on confidence, relationships and mindset.",
+  "sameAs": ["https://twitter.com/Abuamerican", "https://twitter.com/AbdurrahmaanAA"],
+  "knowsAbout": ["Men's Coaching", "Confidence", "Relationships", "Mindset"]
+}</script>
       </Head>
 
       <Header />
