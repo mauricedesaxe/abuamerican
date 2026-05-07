@@ -40,7 +40,7 @@ Prefer atomic commits — one concern per commit, with a clear message. This mak
 - ✅ `update hero image and alt text`
 - ❌ `wip` / `fixes` / `update stuff`
 
-Imperative mood, lowercase, no trailing period. Body (optional) explains *why* if not obvious from the diff.
+Imperative mood, lowercase, no trailing period. Body (optional) explains _why_ if not obvious from the diff.
 
 ## What not to do
 
