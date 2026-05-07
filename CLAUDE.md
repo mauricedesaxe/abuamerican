@@ -31,6 +31,8 @@ Env vars used by the app live in `.env.example`. Ask the project owner for real 
   - Vercel preview deploy succeeds.
   - The code owner approves it.
 - The owner self-approves their own PRs (GitHub disallows self-approval, but admins can bypass).
+- Merging is **rebase-only**. Squash and merge-commit are disabled in repo settings, so the merge button only offers rebase. Keep your commits clean and atomic — they will land on `main` exactly as written.
+- If your branch falls behind `main` and rebasing produces conflicts, resolve them locally and force-push your feature branch. Branches other than `main` allow force-push.
 
 ## Commits within a PR
 
