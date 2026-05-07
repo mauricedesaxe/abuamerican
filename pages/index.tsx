@@ -109,7 +109,7 @@ export default function Home() {
             </div>
             <div className="p-4 bg-gray-50 rounded-b-md">
               <p>
-                Whether you're looking for a peaceful mountain retreat or a
+                Whether you&apos;re looking for a peaceful mountain retreat or a
                 stunning beachfront plot, we provide the support and expertise
                 you need to make your dream a reality.
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
                 href="/bali_and_beyond.pdf"
                 download
               >
-                Get the "Bali and Beyond" Brochure
+                Get the &quot;Bali and Beyond&quot; Brochure
               </a>
             </div>
           </div>
