@@ -40,18 +40,18 @@ The dev server runs on http://localhost:3000.
 
 The newsletter signup endpoint requires ConvertKit credentials. See `.env.example` for the full list. Get real values from the project owner — never commit `.env.local`.
 
-| Variable               | Used for                                   |
-| ---------------------- | ------------------------------------------ |
-| `CONVERTKIT_FORM_ID`   | Target ConvertKit form for email signups   |
-| `CONVERTKIT_API_KEY`   | ConvertKit API key for the signup endpoint |
+| Variable             | Used for                                   |
+| -------------------- | ------------------------------------------ |
+| `CONVERTKIT_FORM_ID` | Target ConvertKit form for email signups   |
+| `CONVERTKIT_API_KEY` | ConvertKit API key for the signup endpoint |
 
 ## Scripts
 
-| Command       | What it does                           |
-| ------------- | -------------------------------------- |
-| `yarn dev`    | Start the Next.js dev server           |
-| `yarn build`  | Production build (also runs on Vercel) |
-| `yarn start`  | Run a built app locally                |
+| Command      | What it does                           |
+| ------------ | -------------------------------------- |
+| `yarn dev`   | Start the Next.js dev server           |
+| `yarn build` | Production build (also runs on Vercel) |
+| `yarn start` | Run a built app locally                |
 
 ## Contributing
 
