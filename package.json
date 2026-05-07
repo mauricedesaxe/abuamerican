@@ -10,7 +10,17 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "next lint --fix --file"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@headlessui/react": "1.4.2",
@@ -30,6 +40,8 @@
     "eslint": "8.57.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "9.1.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.2.10",
     "postcss": "8.3.5",
     "prettier": "3.3.3",
     "tailwindcss": "2.2.4",
